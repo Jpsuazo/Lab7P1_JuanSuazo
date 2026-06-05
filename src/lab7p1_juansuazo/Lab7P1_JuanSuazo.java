@@ -57,18 +57,7 @@ public class Lab7P1_JuanSuazo {
             System.out.print("");
             
         }// for1
-        for (int i = 0; i < 4; i++)suerte(tablero,'V'); {
-            
-        }
-        for (int i = 0; i < 3; i++)suerte(tablero,'T'); {
-            
-        }
-        for (int i = 0; i < 3; i++)suerte(tablero,'S'); {
-            
-        }
-        for (int i = 0; i < 1; i++)suerte(tablero,'P'); {
-            
-        }
+        elementos(tablero);
          llamadodeEmergencia(tablero);
          
             
@@ -95,6 +84,65 @@ public class Lab7P1_JuanSuazo {
         } while (tablero[fila][columna] !='*');
          tablero[fila][columna] = refri;
          return tablero;
+    }
+    public static int [] elementos(char[][] tablero){
+        int [] mover = new int[2];
+      for (int i = 0; i < 4; i++)suerte(tablero,'V'); {
+            
+        }
+        for (int i = 0; i < 3; i++)suerte(tablero,'T'); {
+            
+        }
+        for (int i = 0; i < 3; i++)suerte(tablero,'S'); {
+            
+        }
+        for (int i = 0; i < 1; i++)suerte(tablero,'P'); {
+            
+        }   
+        return mover;
+    } 
+    public static int moverelemento(char[][] tablero){
+        Scanner entrada = new Scanner (System.in);
+        int[] mover = elementos(tablero);
+        int filaelemento = mover[0];
+        int columnaelemento = mover[1];
+        int movimiento = -1;
+        do {
+            System.out.println("1. arriba");
+            System.out.println("2. abajo");
+            System.out.println("3. izquierda");
+            System.out.println("4. derecha");
+            movimiento = entrada.nextInt();
+            } while (movimiento <1 || movimiento > 4);
+        int tamanofilas = tablero.length;
+        int tamanocolumnas = tablero[0].length;
+        switch(movimiento){
+            case 1-> {
+                if (filaelemento - 1 < 0){
+                    System.out.println("Se sale");
+                }else{
+                    if (tablero[filaelemento-1][columnaelemento] =='V'){
+                        System.out.println("Verdura caducada");
+                        
+                    }else{
+                        if(tablero[filaelemento-1][columnaelemento] =='*'){
+                            
+                        }//if3
+                    }//else2
+                }//else1
+            }//case
+            case 2->{
+                 if (filaelemento + 1 < tamanofilas){
+                     System.out.println("se sale");
+                 }else{
+                     
+                 }
+            }
+            
+        }
+                
+        
+        
     }
     }//metodo
     
